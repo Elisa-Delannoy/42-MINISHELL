@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:43:44 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 13:43:45 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:33:34 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	g_sig;
 
 void	exec_minishell(t_var *var, char *line)
 {
-	add_history(line);
 	var->parse = parsing_line(line);
 	if (var->parse == NULL)
 		return ;
@@ -54,6 +53,7 @@ int	main(int argc, char **argv, char **env)
 		manage_signal();
 		rl_catch_signals = 0;
 		line = readline("BrioShell>");
+		add_history(line);
 		var->count_line++;
 		if (line == NULL)
 		{

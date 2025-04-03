@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:43:04 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 13:43:05 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:19:39 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,31 @@ void	print_echo(t_var *var, char **tab, int i, int j)
 	}
 }
 
+int	check_n(char **tab, int *i)
+{
+	int	check;
+	int	j;
+
+	check = 0;
+	while (tab[*i])
+	{
+		if (tab[*i][0] == '-' && tab[*i][1] == 'n')
+		{
+			j = 1;
+			while (tab[*i][j] && tab[*i][j] == 'n')
+				j++;
+			if (tab[*i][j] == 0)
+				check = 1;
+			else
+				break ;
+		}
+		else
+			break ;
+		*i = *i + 1;
+	}
+	return (check);
+}
+
 void	ft_echo(t_var *var, char **tab)
 {
 	int	i;
@@ -31,21 +56,14 @@ void	ft_echo(t_var *var, char **tab)
 	int	check;
 
 	(void) var;
-	i = 0;
+	i = 1;
 	j = 0;
-	check = 0;
-	while (tab[++i])
+	check = check_n(tab, &i);
+	while (tab[i])
 	{
-		if (tab[i][0] == '-' && tab[i][1] == 'n')
-		{
-			j = 1;
-			while (tab[i][j] && tab[i][j] == 'n')
-				j++;
-			if (tab[i][j] == 0)
-				check = 1;
-		}
 		print_echo(var, tab, i, j);
 		j = 0;
+		i++;
 	}
 	if (check != 1)
 		printf("\n");

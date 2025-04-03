@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:44:20 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 13:44:21 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:58:53 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	gest_quote(char *str, int i, int j, t_list **line)
 		i++;
 	if (str[i] == 0)
 		return (ft_putstr_fd("Need to close quote.\n", 1), -1);
-	while (ft_isspace(str[i + 1] == 0)
-		&& ft_strchr("<>|", str[i + 1]) == NULL && str[i])
+	while (str[i + 1] && ft_isspace(str[i + 1]) == 0
+		&& ft_strchr("<>|", str[i + 1]) == NULL)
 		i++;
 	temp = ft_substr(str, j, i - j + 1);
 	ft_lstadd_back(line, ft_lstnew(temp));

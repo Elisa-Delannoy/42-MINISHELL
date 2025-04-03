@@ -6,32 +6,29 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:44:10 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 13:44:11 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:35:19 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
 
-int	check_simple_quoke(char *str)
+void	check_simple_quote(char *str, int *i)
 {
-	int		i;
 	char	quote;
 
-	i = 0;
-	while (str[i])
+	while (str[*i])
 	{
-		if (str[i] == '\'' && str[i + 1] == '$')
+		if (str[*i] == '\'')
 		{
-			quote = str[i];
-			i++;
-			while (str[i] != quote && str[i])
-				i++;
+			quote = str[*i];
+			(*i)++;
+			while (str[*i] != quote && str[*i])
+				(*i)++;
 		}
-		if (str[i] == '\'')
-			return (0);
-		i++;
+		else if (str[*i] == '$')
+			return ;
+		(*i)++;
 	}
-	return (1);
 }
 
 char	*parse_all_str_for_dollar(t_var *var, char *str, int i, int y)
@@ -70,7 +67,7 @@ char	*check_quote(char *str, int i, int y)
 
 	if (str == NULL)
 		return (NULL);
-	if (ft_strcmp(str, "\"\"") == 0 || ft_strcmp(str, "''") == 0)
+	if (ft_strcmp(str, "\"\"") == 0 || ft_strcmp(str, "\'\'") == 0)
 		return (ft_strdup(str));
 	cpy = malloc(sizeof(char) * (ft_strlen(str) + 1));
 	while (i < (int)ft_strlen(str) && str[i])

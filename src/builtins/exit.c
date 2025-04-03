@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:43:11 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 13:43:12 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/02 14:18:46 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	ft_exit(t_var *var, char **tab)
 		error_message_exit_two_arg(var, tab, str);
 	else if (tab[1] && tab[2])
 		return (err_brioshell(tab[0]), ft_putstr_fd(": ", 2), ft_putstr_fd("too"
-				" many arguments\n", 2), var->status = 127, free(str));
+				" many arguments\n", 2), var->status = 1, free(str));
 	else
 	{
 		if (tab && tab[1])
