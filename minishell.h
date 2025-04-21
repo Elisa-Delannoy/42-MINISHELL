@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:44:45 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 17:35:54 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:03:08 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_exec
 	char			**cmd;
 	char			*path;
 	int				input;
+	int				*token;
 	int				output;
 	int				unset_path;
 	struct s_exec	*next;
@@ -54,6 +55,7 @@ typedef struct s_var
 	t_list		*parse;
 	t_exec		*exec;
 	t_heredoc	hd;
+	int			*tokens;
 	char		**data;
 	char		*pwd;
 	char		*oldpwd;

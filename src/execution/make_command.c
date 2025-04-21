@@ -6,7 +6,7 @@
 /*   By: nrontard <nrontard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:43:46 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/02 15:59:06 by nrontard         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:20:38 by nrontard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	**check_command(char **tab, t_var *var, t_exec *exec)
 		else if (tab[var->cmd_count]
 			&& ft_strcmp(tab[var->cmd_count], "|") != 0)
 		{
-			cmd[i++] = ft_strdup(tab[var->cmd_count]);
+			cmd[i++] = ft_strdup(check_quote(var->data[var->cmd_count], 0, 0));
 			var->cmd_count++;
 		}
 	}

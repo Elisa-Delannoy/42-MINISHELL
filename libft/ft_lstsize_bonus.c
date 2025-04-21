@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:33:33 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/01 14:29:39 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:19:15 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

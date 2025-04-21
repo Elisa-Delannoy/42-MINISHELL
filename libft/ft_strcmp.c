@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:40:22 by nrontard          #+#    #+#             */
-/*   Updated: 2025/04/01 17:47:00 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:19:55 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
