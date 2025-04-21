@@ -12,26 +12,23 @@
 
 #include "../../minishell.h"
 
-int	check_simple_quoke(char *str)
+void	check_simple_quote(char *str, int *i)
 {
-	int		i;
 	char	quote;
 
-	i = 0;
-	while (str[i])
+	while (str[*i])
 	{
-		if (str[i] == '\'' && str[i + 1] == '$')
+		if (str[*i] == '\'')
 		{
-			quote = str[i];
-			i++;
-			while (str[i] != quote && str[i])
-				i++;
+			quote = str[*i];
+			(*i)++;
+			while (str[*i] != quote && str[*i])
+				(*i)++;
 		}
-		if (str[i] == '\'')
-			return (0);
-		i++;
+		else if (str[*i] == '$')
+			return ;
+		(*i)++;
 	}
-	return (1);
 }
 
 char	*parse_all_str_for_dollar(t_var *var, char *str, int i, int y)

@@ -132,7 +132,7 @@ char		*parse_dollar(t_var *var, char *str, int *i, int y);
 char		*check_return_value(t_var *var, char *temp);
 char		*check_dollars_heredoc(t_var *var, char *str, int *i, int y);
 char		*check_dollars_parsing(t_var *var, char *str, int *i, int y);
-int			check_simple_quoke(char *str);
+void		check_simple_quote(char *str, int *i);
 void		err_brioshell(char *tab);
 
 #endif
